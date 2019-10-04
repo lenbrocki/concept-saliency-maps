@@ -15,4 +15,4 @@ Training of the VAE can take quite long, pretrained weights can be downloaded he
 
 ## SpatialTranscriptomics
 
-The Spatial Transcriptomics dataset can be downloaded from https://www.spatialresearch.org/resources-published-datasets/doi-10-1126science-aaf2403/ (*Count matrices, Alignments*). The count matrices (in the notebook only MOB Replicate 1 is considered) should be placed in a folder called 'data' and alignments in a folder 'alignments'. 
+The Spatial Transcriptomics dataset can be downloaded from https://www.spatialresearch.org/resources-published-datasets/doi-10-1126science-aaf2403/ (*Count matrices, Alignments*). The count matrices (in the notebook only *MOB Replicate 1* is considered) should be placed in a folder called 'data' and alignments in a folder 'alignments'. 
