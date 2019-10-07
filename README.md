@@ -6,7 +6,7 @@ Contains the jupyter notebooks to reproduce the results of the paper 'Concept Sa
 
 Keras with tensorflow backend is required to run the notebooks.
 
-To create the saliency maps the implementation https://github.com/1202kbs/Rectified-Gradient is used. The folder 'deepexplain' and the python file 'utils.py' need to be in the same directory as the notebooks.
+To create the saliency maps the implementation https://github.com/1202kbs/Rectified-Gradient is used. Make sure the folder 'deepexplain' contains the file 'utils.py' for the notebooks to run.
 
 ### CelebFaces Attributes Dataset (CelebA)
 
