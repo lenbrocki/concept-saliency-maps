@@ -8,7 +8,7 @@ Keras with tensorflow backend is required to run the notebooks.
 
 To create the saliency maps the implementation https://github.com/1202kbs/Rectified-Gradient is used. The folder 'deepexplain' and the python file 'utils.py' need to be in the same directory as the notebooks.
 
-## CelebFaces Attributes Dataset (CelebA)
+### CelebFaces Attributes Dataset (CelebA)
 
 CelebA is a large database of face images with known attributes, consisting of 202593 images and 40 binary annotations of facial attributes for each image. The images have been aligned, scaled and cropped to 128×128 pixels using the landmark annotations that come with the dataset.
 
@@ -20,7 +20,7 @@ Training of the VAE can take quite long, pretrained weights can be downloaded he
 
 Z. Liu, P. Luo, X. Wang, and X. Tang, “Deep learning face attributes in the wild,” in Proceedings of International Conference on Computer Vision (ICCV), December 2015.
 
-## Spatial Gene Expression of a Mouse Olfactory Bulb
+### Spatial Gene Expression of a Mouse Olfactory Bulb
 Spatial Transcriptomics (ST) data of a mouse olfactory bulb contains genome-wide gene expressions from a sliced tissue section of a mouse olfactory bulb. When positioned on a microchip, there are 267 spots in a grid that measure expression activities of upto 16573 genes within that locality. Each of 16573 genes is treated as a sample with 267 features, which are the counts of RNAs at the different spots in the tissue.
 
 The Spatial Transcriptomics dataset can be downloaded from https://www.spatialresearch.org/resources-published-datasets/doi-10-1126science-aaf2403/ (*Count matrices, Alignments*). The count matrices (in the notebook only *MOB Replicate 1* is considered) should be placed in a folder called 'data' and alignments in a folder 'alignments'. 
