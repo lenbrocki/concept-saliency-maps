@@ -6,7 +6,8 @@ Contains the jupyter notebooks to reproduce the results of the paper 'Concept Sa
 
 Keras with tensorflow backend is required to run the notebooks.
 
-To create the saliency maps the implementation https://github.com/1202kbs/Rectified-Gradient is used. Make sure the folder 'deepexplain' contains the file 'utils.py' for the notebooks to run.
+To create the saliency maps the implementation https://github.com/1202kbs/Rectified-Gradient is used. 
+Make sure the folder 'deepexplain' contains the file 'utils.py' for the notebooks to run.
 
 ### CelebFaces Attributes Dataset (CelebA)
 
@@ -26,3 +27,37 @@ Spatial Transcriptomics (ST) data of a mouse olfactory bulb contains genome-wide
 The Spatial Transcriptomics dataset can be downloaded from https://www.spatialresearch.org/resources-published-datasets/doi-10-1126science-aaf2403/ (*Count matrices, Alignments*). The count matrices (in the notebook only *MOB Replicate 1* is considered) should be placed in a folder called 'data' and alignments in a folder 'alignments'. 
 
 St{\aa}hl, Patrik L and Salm{\'e}n, Fredrik and Vickovic, Sanja and Lundmark, Anna and Navarro, Jos{\'e} Fern{\'a}ndez and Magnusson, Jens and Giacomello, Stefania and Asp, Michaela and Westholm, Jakub O and Huss, Mikael and et al., “Visualization and analysis of gene expression in tissue sections by spatial transcriptomics,” Science, 2016.
+
+### Other Models and Datasets
+To use our method of obtaining saliency maps with other deep learning models one has to extract the latent layer from this model and feed it into the `explain` method as shown in the following pseudo code example.
+```python
+# Pseudo-code
+from deepexplain.tensorflow import DeepExplain
+
+# Option 1. Create and train your own model within a DeepExplain context
+
+with DeepExplain(session=...) as de:  # enter DeepExplain context
+    model = init_model()  # construct the model
+    model.fit()           # train the model
+    
+    input_tensor = tf.placeholder(type, [dimensions] )
+    method = 'guidedbp' # choose method of obtaining saliency map
+    latent_vector = encoder(input_tensor) # assumes encoder(input_tensor) returns the latent vectors of `model`
+
+    concept_score = K.sum(lats*concept_vector) # calculate dot product to obtain concept score
+    attributions = de.explain(method, concept_score, input_tensor, img_array) # compute saliency map
+
+
+# Option 2. Import a pretrained model 
+# IMPORTANT: in order to work correctly, the graph to analyze
+# must always be (re)constructed within the context!
+
+
+with DeepExplain(session=...) as de:  # enter DeepExplain context
+    new_model = init_model()  # assumes init_model() returns a *new* model with the weights of `model`
+    
+    ... # same steps as in Option 1
+    
+    attributions = de.explain(method, concept_score, input_tensor, img_array) # compute saliency map
+```
+More details about the DeepExplain context can be found here https://github.com/marcoancona/DeepExplain
