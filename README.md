@@ -54,7 +54,7 @@ with DeepExplain(session=...) as de:  # enter DeepExplain context
 
 
 with DeepExplain(session=...) as de:  # enter DeepExplain context
-    new_model = init_model()  # assumes init_model() returns a *new* model with the weights of `model`
+    new_model = init_model()  # assumes init_model() returns a *new* model with the weights of the imported model
     
     ... # same steps as in Option 1
     
