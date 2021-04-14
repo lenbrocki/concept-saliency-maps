@@ -17,7 +17,7 @@ The celebA dataset can be downloaded from http://mmlab.ie.cuhk.edu.hk/projects/C
 
 Make sure that after unpacking all images are in a folder called 'img_align_celeba' and the csv files are in the same directory as the notebook.
 
-Training of the VAE can take quite long, pretrained weights can be downloaded here https://drive.google.com/file/d/17_3u_KAjpTP8QPfYyP_vMkKn9GjVKYfv/view 
+Training of the VAE can take quite long, pretrained weights can be downloaded here https://drive.google.com/file/d/1EVSOk8TX9m5NnBO7MWk7OyTpMN7QZ0s4/view?usp=sharing
 
 Z. Liu, P. Luo, X. Wang, and X. Tang, “Deep learning face attributes in the wild,” in Proceedings of International Conference on Computer Vision (ICCV), December 2015.
 
