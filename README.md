@@ -44,7 +44,7 @@ with DeepExplain(session=...) as de:  # enter DeepExplain context
     method = 'guidedbp' # choose method of obtaining saliency map
     latent_vector = encoder(input_tensor) # assumes encoder(input_tensor) returns the latent vectors of `model`
 
-    concept_score = K.sum(lats*concept_vector) # calculate dot product to obtain concept score
+    concept_score = K.sum(latent_vector*concept_vector) # calculate dot product to obtain concept score
     attributions = de.explain(method, concept_score, input_tensor, img_array) # compute saliency map
 
 
